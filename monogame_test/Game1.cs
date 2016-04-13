@@ -45,6 +45,18 @@ namespace monogame_test
             base.Initialize();
         }
 
+        protected override void OnActivated(object sender, EventArgs args)
+        {
+            this.Window.Title = "Active Application";
+            base.OnActivated(sender, args);
+        }
+
+        protected override void OnDeactivated(object sender, EventArgs args)
+        {
+            this.Window.Title = "InActive Application";
+            base.OnDeactivated(sender, args);
+        }
+
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.

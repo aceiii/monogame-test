@@ -22,6 +22,8 @@ namespace monogame_test
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             position = new Vector2(0, 0);
+            this.IsFixedTimeStep = false;
+            this.graphics.SynchronizeWithVerticalRetrace = false;
         }
 
         /// <summary>

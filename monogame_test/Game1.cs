@@ -87,7 +87,7 @@ namespace monogame_test
                 #endif
                 
                 // TODO: Add your update logic here
-                position.X += 1;
+                position.X += 200.0f * (float)gameTime.ElapsedGameTime.TotalSeconds;
                 if (position.X > this.GraphicsDevice.Viewport.Width)
                 {
                     position.X = 0;

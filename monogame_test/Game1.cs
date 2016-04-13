@@ -61,24 +61,26 @@ namespace monogame_test
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
         /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            // For Mobile devices, this logic will close the Game when the Back button is pressed
-            // Exit() is obsolete on iOS
-            #if !__IOS__ &&  !__TVOS__
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
-            #endif
-            
-            // TODO: Add your update logic here
-            position.X += 1;
-            if (position.X > this.GraphicsDevice.Viewport.Width)
+            if (IsActive)
             {
-                position.X = 0;
+                // For Mobile devices, this logic will close the Game when the Back button is pressed
+                // Exit() is obsolete on iOS
+                #if !__IOS__ &&  !__TVOS__
+                if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+                    Exit();
+                #endif
+                
+                // TODO: Add your update logic here
+                position.X += 1;
+                if (position.X > this.GraphicsDevice.Viewport.Width)
+                {
+                    position.X = 0;
+                }
+                
+                base.Update(gameTime);
             }
-            
-            base.Update(gameTime);
         }
 
         /// <summary>

@@ -3,5 +3,5 @@
 
 MonoGame tutorial from [GameFromScratch][1]
 
-[1]: http://www.gamefromscratch.com/post/2015/06/15/MonoGame-Tutorial-Creating-an-Application.aspx (MonoGame Tutorial - Creating an Application)
+[1]: http://www.gamefromscratch.com/page/MonoGame-Tutorial-Series.aspx (MonoGame Tutorial Series)
 

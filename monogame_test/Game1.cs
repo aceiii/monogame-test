@@ -35,7 +35,7 @@ namespace monogame_test
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            texture = new Texture2D(this.GraphicsDevice, 100, 100);
+            /*texture = new Texture2D(this.GraphicsDevice, 100, 100);
             Color[] colorData = new Color[100 * 100];
             for (int i = 0; i < 10000; i += 1)
             {
@@ -43,6 +43,7 @@ namespace monogame_test
             }
 
             texture.SetData<Color>(colorData);
+            */
             
             base.Initialize();
         }
@@ -68,7 +69,13 @@ namespace monogame_test
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            //TODO: use this.Content to load your game content here 
+            //TODO: use this.Content to load your game content here
+            texture = this.Content.Load<Texture2D>("logo_circle");
+        }
+
+        protected override void UnloadContent()
+        {
+            Content.Unload();
         }
 
         /// <summary>
